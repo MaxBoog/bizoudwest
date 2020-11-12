@@ -1,0 +1,24 @@
+/* FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+
+/* TAILWIND IMPORTS */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GLOBAL STYLES */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: "Merriweather", "sans-serif";
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 900;
+}
