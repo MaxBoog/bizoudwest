@@ -18,6 +18,11 @@ body {
   font-family: "Merriweather", "sans-serif";
 }
 
+h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
 h3 {
   font-size: 2rem;
   font-weight: 900;

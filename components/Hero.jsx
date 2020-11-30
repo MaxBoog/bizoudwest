@@ -10,7 +10,7 @@ export default function Hero() {
         <StyledHero>
             <div className="hero">
                 <div className="container mx-auto px-6 flex flex-col content-center">
-                    <h1 className="hero-title text-6xl py-6 mt-10 lg:mt-40">Biz Oudwest</h1>
+                    <h1 className="hero-title text-6xl py-6 mt-10 lg:mt-40">Biz Oudwest <span>.</span></h1>
                     <h3 className="hero-subtitle text-3xl lg:text-4xl pb-10">Het mooiste winkelgebied van Amsterdam!</h3>
                     <div className="flex">
                         <Link href="/boutiques">
@@ -44,5 +44,9 @@ const StyledHero = styled.div`
         .hero-subtitle {
             color: ${props => props.theme.colors.white};
         }
+    }
+
+    span {
+        color: ${props => props.theme.colors.secondary};
     }
 `
