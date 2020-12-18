@@ -18,6 +18,10 @@ const ButtonStyled = styled.div`
     .btn {
         font-weight: bold;
         border-radius: 2px;
+        transition: .2s ease-in-out;
+        &:hover {
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+        }
     }
 
     .btn-primary {
