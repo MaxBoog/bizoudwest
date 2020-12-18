@@ -1,3 +1,3 @@
 export default function Separator() {
-    return <hr className="mt-24 mb-24"/>
+    return <hr className="my-12 lg:my-24"/>
 }

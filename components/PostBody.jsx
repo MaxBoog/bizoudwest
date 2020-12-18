@@ -4,7 +4,7 @@ export default function PostBody({ content }) {
     return (
         <div className="max-w-6xl mx-auto px-4 sm:px-0">
             <ContentStyled>
-                <div className="content" dangerouslySetInnerHTML={{ __html: content}}/>
+                <div className="content text-gray-800" dangerouslySetInnerHTML={{ __html: content}}/>
             </ContentStyled>
         </div>
     )
@@ -20,6 +20,11 @@ const ContentStyled = styled.div`
     .content ol,
     .content blockquote {
     @apply my-6;
+    }
+
+    content img {
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 
     .content a {

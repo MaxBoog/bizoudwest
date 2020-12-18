@@ -14,8 +14,11 @@ const News = ({ allPosts: { edges } }) => {
         <NewsStyled>
             {/* Container */}
             <Container>
-                <div className="px-4">
-                    <h1 className="pt-40 md:pt-64 mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">Nieuwsoverzicht</h1>
+                <div className="px-6 md:px-4">
+                    <div className="text-center pt-40 md:pt-64">
+                        <Image src="/images/news.svg" layout="fixed" width={200} height={200}/>
+                    </div>
+                    <h1 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight text-center">Nieuwsoverzicht</h1>
                     <hr/>
                     <div className="flex flex-wrap -mx-1 lg:-mx-4">
                         {edges.map(({ node }) => (

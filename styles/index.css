@@ -47,6 +47,8 @@ h3 {
   max-width: 15rem !important;
 }
 
+/* fonts and colors */
+
 .font-primary {
   font-family: "Merriweather Sans", "serif" !important;
 }
@@ -58,6 +60,24 @@ h3 {
 .font-text {
   font-family: "Roboto", "sans-serif" !important;
 }
+
+.color-primary {
+  color: #e7335d;
+}
+
+.color-secondary {
+  color: #08d9d6;
+}
+
+.bg-color-primary {
+  background-color: #e7335d;
+}
+
+.bg-color-secondary {
+  background-color: #08d9d6;
+}
+
+/* wordpress normalize */
 
 .has-text-align-left {
   @apply text-left;

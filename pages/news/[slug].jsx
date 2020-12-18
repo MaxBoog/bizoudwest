@@ -48,7 +48,7 @@ export default function Post({ postData }) {
                                 </h3>
                                 <div className="text-center md:text-left">
                                     <Link href="/news">
-                                        <Button className="btn text-blue-800 mt-4 "><FontAwesomeIcon icon={faChevronCircleLeft}/> Terug</Button>
+                                        <Button className="text-indigo-800 mt-4 font-bold"><FontAwesomeIcon icon={faChevronCircleLeft}/> Terug</Button>
                                     </Link>
                                 </div>
                                 <Separator/>
@@ -56,7 +56,7 @@ export default function Post({ postData }) {
                             <Separator/>
                             <div className="text-center md:text-left">
                                     <Link href="/news">
-                                        <Button className="btn text-blue-800 mt-4 "><FontAwesomeIcon icon={faChevronCircleLeft}/> Terug</Button>
+                                        <Button className="text-indigo-800 mt-4 font-bold"><FontAwesomeIcon icon={faChevronCircleLeft}/> Terug</Button>
                                     </Link>
                                 </div>
                         </article>

@@ -11,10 +11,10 @@ export default function Home({ morePosts: { edges }}) {
         <div>
             <Hero/>
             
-            <FeatureSection/>
             <Container>
                 {edges.length > 0 && <MorePosts posts={edges} />}
             </Container>
+            <FeatureSection/>
             <CustomCarousel/>
         </div>
     )
