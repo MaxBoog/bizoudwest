@@ -1,6 +1,6 @@
 
 export default function Contact() {
     return (
-        <p>Contact page</p>
+        <p className="pt-64">Under construction...e</p>
     )
 }

@@ -104,7 +104,7 @@ export default function FeatureSection() {
                     <Link href="/contact">
                         <div className="shadow-lg hover:shadow-2xl transition ease-in-out duration-200">
                             <a>
-                                <Image priority="true" layout="responsive" width={3} height={2} objectFit="cover" src="/images/bedrijfsgebied.png"/>
+                                <Image layout="responsive" width={3} height={2} objectFit="cover" src="/images/bedrijfsgebied.png"/>
                                 
                             </a>
                         </div>
