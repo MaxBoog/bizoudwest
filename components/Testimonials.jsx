@@ -1,9 +1,10 @@
-import styled from "@emotion/styled"
-import Container from "components/Container"
-import Dot from "components/Dot"
-import Separator from "components/Separator"
-import { Carousel } from "react-responsive-carousel"
-import "react-responsive-carousel/lib/styles/carousel.min.css"
+import styled from '@emotion/styled'
+import Container from 'components/Container'
+import Dot from 'components/Dot'
+import Separator from 'components/Separator'
+import Image from 'next/image'
+import { Carousel } from 'react-responsive-carousel'
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 
 export default function Testimonials() {
@@ -11,7 +12,9 @@ export default function Testimonials() {
         <TestimonialsStyled>
             <Container>
                 <Separator/>
-                
+                <div className="text-center">
+                    <Image priority="true" src="/images/testimonials.svg" layout="fixed" width={200} height={200}/>
+                </div>
                     <h2 className="mb-20 text-5xl font-bold tracking-tighter leading-tight text-center">Wat zegt de pers over Biz Oudwest? <Dot/></h2>
                 
                 <Carousel
@@ -109,13 +112,13 @@ const TestimonialsStyled = styled.div`
     }
 
     .carousel .slide {
-        background: #fff!important;
+        background: #fff !important;
         color: black;
         height: 100%;
     }
 
     .item {
-        background: #FFFFEF;
+        background: #FFFFF5;
         /* margin-top: -6%; */
         width: 75%;
         margin-left: auto;
@@ -124,8 +127,9 @@ const TestimonialsStyled = styled.div`
         padding-bottom: 12%;
         padding-left: 5%;
         padding-right: 5%;
-        border: 1px solid #ddd;
+        border: 1px solid #C92C51;
         height: 286px;
+        /* border-radius: 10px; */
     }
 
     .carousel .control-dots {
@@ -178,9 +182,11 @@ const TestimonialsStyled = styled.div`
 
     .carousel.carousel-slider .control-arrow {
         background: #000 !important;
+        color: black !important;
         height: 50px !important;
         position: absolute;
-        top: 35% !important;
+        top: 40% !important;
+        
     }
 
     @media only screen and (max-width: 1024px) {
