@@ -31,7 +31,7 @@ const links = [
     return (
         <>
         <NavigationStyled>
-        <nav className="navbar fixed w-full flex flex-wrap items-center justify-between px-3 py-6 navbar-expand-lg z-10">
+        <nav className="navbar fixed w-full flex flex-wrap items-center justify-between px-3 py-6 navbar-expand-lg z-10 shadow-lg">
         
             <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
             <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">

@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 export default function PostBody({ content }) {
     return (
-        <div className="max-w-6xl mx-auto px-4 sm:px-0">
+        <div className="max-w-6xl mx-auto px-6 sm:px-0">
             <ContentStyled>
                 <div className="content text-gray-800" dangerouslySetInnerHTML={{ __html: content}}/>
             </ContentStyled>

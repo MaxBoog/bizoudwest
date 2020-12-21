@@ -95,6 +95,17 @@ h3 {
   @apply text-4xl;
 }
 
+.alignleft {
+  @apply m-auto !important;
+}
+.alignright {
+  @apply m-auto !important;
+}
+
+.wp-image-100 {
+  @apply my-10 !important;
+}
+
 .alignfull {
   @apply w-screen relative;
 
@@ -131,10 +142,10 @@ h3 {
 }
 
 .wp-block-image .alignleft {
-  @apply float-left mr-4;
+  @apply m-auto;
 }
 .wp-block-image .alignright {
-  @apply float-right ml-4;
+  @apply m-auto;
 }
 .wp-block-image .aligncenter {
   @apply m-auto;

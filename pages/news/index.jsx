@@ -7,6 +7,8 @@ import Image from 'next/image'
 import Container from 'components/Container'
 import { getAllPosts } from '../../lib/api'
 import FormattedDate from 'components/FormattedDate'
+import Dot from 'components/Dot'
+import Separator from 'components/Separator'
 
 const News = ({ allPosts: { edges } }) => {
 
@@ -16,16 +18,16 @@ const News = ({ allPosts: { edges } }) => {
             <Container>
                 <div className="px-6 md:px-4">
                     <div className="text-center pt-40 md:pt-64">
-                        <Image src="/images/news.svg" layout="fixed" width={200} height={200}/>
+                        <Image priority="true" src="/images/news.svg" layout="fixed" width={200} height={200}/>
                     </div>
                     <h1 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight text-center">Nieuwsoverzicht</h1>
-                    <hr/>
+                    <Separator/>
                     <div className="flex flex-wrap -mx-1 lg:-mx-4">
                         {edges.map(({ node }) => (
                             // Column
-                            <div className="lg:flex xs:w-full  my-5 lg:my-10 px-4 lg:px-10 lg:w-1/2">
+                            <div className="lg:flex xs:w-full  my-5 lg:my-10 px-4 lg:px-10 lg:w-1/2"  key={node.databaseId}>
                                 {/* Article */}
-                                <article className="flex-grow-0 lg:flex-grow overflow-hidden shadow-lg hover:shadow-2xl transition ease-in-out duration-200" key={node.databaseId}>
+                                <article className="flex-grow-0 lg:flex-grow overflow-hidden shadow-lg hover:shadow-2xl transition ease-in-out duration-200">
                                     {/* Image */}
                                     <Link as={`/news/${node.slug}`} href={`/news/${node.slug}`}>
                                         <a>
@@ -34,17 +36,17 @@ const News = ({ allPosts: { edges } }) => {
                                     </Link>
 
                                     {/* Title */}
-                                    <header className="leading-tight p-5 md:p-7">
+                                    <header className="leading-tight px-10 py-5">
                                         <h1 className="text-3xl title">
                                             <Link as={`/news/${node.slug}`} href={`/news/${node.slug}`}>
                                                 <a className="no-underline hover:underline text-black">
-                                                    {node.titles.titleNl}
+                                                    {node.titles.titleNl} <Dot/>
                                                 </a>
                                             </Link>
                                         </h1>
                                     </header>
                                     {/* Preview Text */}
-                                    <div className="p-5 md:p-7">
+                                    <div className="px-10 py-5">
                                         <p className="text-xl md:text-2xl text-gray-700">
                                             {node.previewTexts.previewTextNl}
                                             <p className=" text-blue-700 mt-3">
@@ -56,7 +58,7 @@ const News = ({ allPosts: { edges } }) => {
                                             </p>
                                         </p>
                                     </div>
-                                    <div className="px-5 md:px-7 mb-5">
+                                    <div className="px-10 pt-5">
                                         {/* Date */}
                                         <p className="text-gray-500 text-sm md:text-lg">
                                             <FormattedDate dateString={node.date}/>
@@ -67,14 +69,11 @@ const News = ({ allPosts: { edges } }) => {
                                     
                                     </p>
                                     
-                                        {/* <Link href={`/news/${node.slug}`}>
-                                            <Button className="mt-auto btn btn-primary hover:bg-pink-500 text-base text-white py-5 px-6 m-5 md:m-7">Lees meer...</Button>
-                                        </Link>
-                                    */}
                                 </article>
                             </div>
                         ))}
                     </div>
+                        <Separator/>
                 </div>
 
                 {/* <div className="inline-flex">

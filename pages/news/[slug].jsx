@@ -12,6 +12,8 @@ import FormattedDate from 'components/FormattedDate'
 import Separator from 'components/Separator'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons'
+import ScrollToTopButton from 'components/ScrollToTopButton'
+import ProgressBar from 'react-progressbar-on-scroll'
 
 // data
 import { getAllPostsWithSlug, getPost } from '../../lib/api'
@@ -38,7 +40,11 @@ export default function Post({ postData }) {
                     </Container>
                 ) : (
                     <Container>
-                        <article className="pt-40 md:pt-64">
+                        <ProgressBar
+                            color="#e7335d"
+                            
+                        />
+                        <article className="pt-40 md:pt-64" key={postData.databaseId}>
                                 <div className="sm:mx-0">
                                     <Image layout="responsive" objectFit="cover" width={3} height={2} src={postData.previewImage.previewImage.mediaItemUrl} alt={postData.titles.titleNl}/>
                                 </div>
@@ -60,6 +66,7 @@ export default function Post({ postData }) {
                                     </Link>
                                 </div>
                         </article>
+                        <ScrollToTopButton/>
                     </Container>
                 )}
             </PostStyled>
