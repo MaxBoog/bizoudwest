@@ -1,6 +1,10 @@
 
+import Container from 'components/Container'
+
 export default function Contact() {
     return (
-        <p className="pt-64">Under construction...e</p>
+        <Container>
+            <p className="pt-64">Wordt aan gewerkt....</p>
+        </Container>
     )
 }

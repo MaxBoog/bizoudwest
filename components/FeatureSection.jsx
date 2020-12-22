@@ -94,7 +94,7 @@ export default function FeatureSection() {
                 </div>
                 <div>
                     <Separator/>
-                    <p className="my-5 text-3xl lg:text-5xl leading-8 font-extrabold tracking-tight text-gray-900">
+                    <p className="my-5 text-3xl lg:text-5xl leading-8 font-extrabold tracking-tight text-gray-900 ml-4">
                         Waar precies? <Link href="/contact">
                             <a className="text-lg text-indigo-800 tracking-normal">
                                 Bekijk op maps <FontAwesomeIcon icon={faExternalLinkAlt}/>

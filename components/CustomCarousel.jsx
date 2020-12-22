@@ -16,6 +16,12 @@ export default function CustomCarousel() {
                     <div>
                         <Image layout="responsive" width={16} height={5} objectFit="cover" src="/images/carousel/ebeling-2.JPG"/>
                     </div>
+                    <div>
+                        <Image layout="responsive" width={16} height={5} objectFit="cover" src="/images/carousel/plantage-boekhandel.JPG"/>
+                    </div>
+                    <div>
+                        <Image layout="responsive" width={16} height={5} objectFit="cover" src="/images/carousel/basic-fit.JPG"/>
+                    </div>
                 </Carousel>
         </div>
     )

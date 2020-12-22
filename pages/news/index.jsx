@@ -40,7 +40,7 @@ const News = ({ allPosts: { edges } }) => {
                                         <h1 className="text-3xl title">
                                             <Link as={`/news/${node.slug}`} href={`/news/${node.slug}`}>
                                                 <a className="no-underline hover:underline text-black">
-                                                    {node.titles.titleNl} <Dot/>
+                                                    {node.titles.titleNl}<Dot/>
                                                 </a>
                                             </Link>
                                         </h1>

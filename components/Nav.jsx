@@ -40,7 +40,7 @@ const links = [
                     className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase logo-text font-secondary"
                     
                     >
-                    Biz Oudwest <Dot/>
+                    Biz Oudwest<Dot/>
                     </a>
                 </Link>
                 <button
@@ -68,7 +68,7 @@ const links = [
                     {links.map(({ key, href, label, label_en}) => (
                         <li className="nav-item font-secondary" key={key} onClick={() => setNavbarOpen(!navbarOpen)}>
                             <Link href={href}>
-                                <a className={router.pathname === href ? 'px-3 py-2 flex items-center text-xs font-bold leading-snug active' : 'px-3 py-2 flex items-center text-xs font-bold leading-snug opacity-75'}>{label} <Dot/></a>
+                                <a className={router.pathname === href ? 'px-3 py-2 flex items-center text-xs font-bold leading-snug active' : 'px-3 py-2 flex items-center text-xs font-bold leading-snug opacity-75'}>{label}<Dot/></a>
                             </Link>
                         </li>
                     ))}

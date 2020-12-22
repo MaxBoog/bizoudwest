@@ -13,8 +13,8 @@ export default function Hero() {
         <StyledHero>
             <div className="hero">
                 <div className="container mx-auto px-6 flex flex-col content-center">
-                    <HeroTitle>Biz Oudwest <Dot/></HeroTitle>
-                    <HeroSubTitle>Het mooiste winkelgebied en horeca van Amsterdam!</HeroSubTitle>
+                    <HeroTitle>Biz Oudwest<Dot/></HeroTitle>
+                    <HeroSubTitle>Het mooiste winkel en horeca gebied van Amsterdam!</HeroSubTitle>
                     <div className="flex">
                         <Link href="/boutiques">
                             <Button className="btn btn-primary mr-6 flex-auto text-base md:text-3xl px-10">Alle Winkels en Ondernemingen <FontAwesomeIcon icon={faStore} className="ml-1"/></Button>
