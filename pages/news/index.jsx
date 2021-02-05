@@ -31,7 +31,7 @@ const News = ({ allPosts: { edges } }) => {
                                     {/* Image */}
                                     <Link as={`/news/${node.slug}`} href={`/news/${node.slug}`}>
                                         <a>
-                                            <Image layout="responsive" objectFit="cover" width={3} height={2} loading="lazy" className="h-auto w-full" src={node.previewImage.previewImage.mediaItemUrl} alt={node.titles.titleNl}/>
+                                            <Image layout="responsive" objectFit="cover" width={3} height={2} loading="lazy" className="h-auto w-full" src={node.preview_image.previewImage.mediaItemUrl} alt={node.titel.titelNl}/>
                                         </a>
                                     </Link>
 
@@ -40,7 +40,7 @@ const News = ({ allPosts: { edges } }) => {
                                         <h1 className="text-3xl title">
                                             <Link as={`/news/${node.slug}`} href={`/news/${node.slug}`}>
                                                 <a className="no-underline hover:underline text-black">
-                                                    {node.titles.titleNl}<Dot/>
+                                                    {node.titel.titelNl}<Dot/>
                                                 </a>
                                             </Link>
                                         </h1>
@@ -48,7 +48,7 @@ const News = ({ allPosts: { edges } }) => {
                                     {/* Preview Text */}
                                     <div className="px-10 py-5">
                                         <p className="text-xl md:text-2xl text-gray-700">
-                                            {node.previewTexts.previewTextNl}
+                                            {node.preview_tekst.previewTekstNl}
                                             <p className=" text-blue-700 mt-3">
                                                 <Link as={`/news/${node.slug}`} href={`/news/${node.slug}`}>
                                                     <a>

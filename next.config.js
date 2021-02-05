@@ -7,7 +7,7 @@ module.exports = {
     },
     images: {
         domains:[
-            'wordpress.biz-outwest.nl'
+            'wordpress.biz-oudwest.nl'
         ],
         loader: 'default'
     },

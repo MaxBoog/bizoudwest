@@ -46,9 +46,9 @@ export default function Post({ postData }) {
                         />
                         <article className="pt-40 md:pt-64" key={postData.databaseId}>
                                 <div className="sm:mx-0">
-                                    <Image layout="responsive" objectFit="cover" width={3} height={2} src={postData.previewImage.previewImage.mediaItemUrl} alt={postData.titles.titleNl}/>
+                                    <Image layout="responsive" objectFit="cover" width={3} height={2} src={postData.preview_image.previewImage.mediaItemUrl} alt={postData.titel.titelNl}/>
                                 </div>
-                                <PostTitle>{postData.titles.titleNl}</PostTitle>
+                                <PostTitle>{postData.titel.titelNl}</PostTitle>
                                 <h3 className="text-center text-gray-600 text-base md:text-lg">
                                     <FormattedDate dateString={postData.date}/> 
                                 </h3>
