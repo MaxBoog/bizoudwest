@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import Button from 'components/Button'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStore, faNewspaper } from '@fortawesome/free-solid-svg-icons'
+import { faStore, faNewspaper, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 import HeroTitle from 'components/HeroTitle'
 import HeroSubTitle from 'components/HeroSubTitle'
 import Dot from 'components/Dot'
@@ -23,7 +23,6 @@ export default function Hero() {
                             <Button className="btn btn-secondary flex-auto text-base md:text-3xl">Laatste Nieuws <FontAwesomeIcon icon={faNewspaper} className="ml-1"/></Button>
                         </Link>
                     </div>
-                    
                 </div>
             </div>
         </StyledHero>

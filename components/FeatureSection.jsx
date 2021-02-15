@@ -1,19 +1,21 @@
 import Container from 'components/Container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUtensils, faMugHot, faStore, faDumbbell, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
+import { faUtensils, faMugHot, faStore, faDumbbell, faExternalLinkAlt, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 import Separator from 'components/Separator'
 import Link from 'next/link'
 import Image from 'next/image'
 import styled from '@emotion/styled'
+import ArrowDown from 'components/ArrowDown'
 
 
 export default function FeatureSection() {
     return (
         <FeatureSectionStyled>
             <Container>
-            <div className="row-span-1">
+            <div className="row-span-1" id="down">
                     <div className="mx-auto px-4 sm:px-6 lg:px-8 mt-5">
                         <div className="text-center">
+                            <ArrowDown/>
                             <h2 className="my-10 lg:mt-24 text-2xl color-primary font-semibold tracking-wide uppercase">Bedrijven Investeringszone <span className="color-secondary">OUD WEST</span></h2>
                             <p className="mt-2 text-3xl lg:text-5xl leading-8 font-extrabold tracking-tight text-gray-900 ">
                                 Van horeca en pitoreske winkeltjes tot de basic-fit en de bever
@@ -95,13 +97,13 @@ export default function FeatureSection() {
                 <div>
                     <Separator/>
                     <p className="my-5 text-3xl lg:text-5xl leading-8 font-extrabold tracking-tight text-gray-900 ml-4">
-                        Waar precies? <Link href="/contact">
+                        Waar precies? <Link href="/boutiques">
                             <a className="text-lg text-indigo-800 tracking-normal">
                                 Bekijk op maps <FontAwesomeIcon icon={faExternalLinkAlt}/>
                             </a>
                         </Link>
                     </p>
-                    <Link href="/contact">
+                    <Link href="/boutiques">
                         <div className="shadow-lg hover:shadow-2xl transition ease-in-out duration-200">
                             <a>
                                 <Image layout="responsive" width={3} height={2} objectFit="cover" src="/images/Bedrijfsgebied.png"/>

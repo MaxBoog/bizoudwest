@@ -25,20 +25,20 @@ const News = ({ allPosts: { edges } }) => {
                     <div className="flex flex-wrap -mx-1 lg:-mx-4">
                         {edges.map(({ node }) => (
                             // Column
-                            <div className="lg:flex xs:w-full  my-5 lg:my-10 px-4 lg:px-10 lg:w-1/2"  key={node.databaseId}>
+                            <Link href={`/news/${node.slug}`}>
+                            <div className="lg:flex xs:w-full  my-5 lg:my-10 px-4 lg:px-10 lg:w-1/2 cursor-pointer"  key={node.databaseId}>
                                 {/* Article */}
                                 <article className="flex-grow-0 lg:flex-grow overflow-hidden shadow-lg hover:shadow-2xl transition ease-in-out duration-200">
                                     {/* Image */}
-                                    <Link as={`/news/${node.slug}`} href={`/news/${node.slug}`}>
                                         <a>
                                             <Image layout="responsive" objectFit="cover" width={3} height={2} loading="lazy" className="h-auto w-full" src={node.preview_image.previewImage.mediaItemUrl} alt={node.titel.titelNl}/>
                                         </a>
-                                    </Link>
+                                    
 
                                     {/* Title */}
-                                    <header className="leading-tight px-10 py-5">
+                                    <header className="leading-tight px-10 pt-10 pb-5">
                                         <h1 className="text-3xl title">
-                                            <Link as={`/news/${node.slug}`} href={`/news/${node.slug}`}>
+                                            <Link href={`/news/${node.slug}`}>
                                                 <a className="no-underline hover:underline text-black">
                                                     {node.titel.titelNl}<Dot/>
                                                 </a>
@@ -50,7 +50,7 @@ const News = ({ allPosts: { edges } }) => {
                                         <p className="text-xl md:text-2xl text-gray-700">
                                             {node.preview_tekst.previewTekstNl}
                                             <p className=" text-blue-700 mt-3">
-                                                <Link as={`/news/${node.slug}`} href={`/news/${node.slug}`}>
+                                                <Link href={`/news/${node.slug}`}>
                                                     <a>
                                                         Lees meer...
                                                     </a>
@@ -71,6 +71,7 @@ const News = ({ allPosts: { edges } }) => {
                                     
                                 </article>
                             </div>
+                            </Link>
                         ))}
                     </div>
                         <Separator/>

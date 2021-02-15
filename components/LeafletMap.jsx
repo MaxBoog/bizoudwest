@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic'
 import Container from 'components/Container'
-import React from 'react'
+// import React from 'react'
 
-export default function LeafletMap({ latitude, longitude }) {
+export default function LeafletMap({ latitude, longitude, winkelnaam, winkeladres }) {
     const MapWithNoSSR = dynamic(() => import("./Map"), {
         ssr: false
     })
@@ -10,7 +10,7 @@ export default function LeafletMap({ latitude, longitude }) {
     return (
         <Container>
             <div id="map">
-                <MapWithNoSSR lat={latitude} long={longitude}/>
+                <MapWithNoSSR winkeladres={winkeladres} winkelnaam={winkelnaam} lat={latitude} long={longitude}/>
             </div>
         </Container>
     )

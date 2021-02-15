@@ -22,7 +22,7 @@ export default function MorePosts({ posts }) {
                 
 
                     
-                    <Link as={`/news/${node.slug}`} href={`/news/${node.slug}`} key={node.id}>
+                    <Link href={`/news/${node.slug}`} key={node.id}>
                         
                             <div className="shadow-lg hover:shadow-2xl transition ease-in-out duration-200 overflow-hidden">
                                 <div className="my-5">
@@ -31,13 +31,20 @@ export default function MorePosts({ posts }) {
                                 <div className="px-10 py-5">
                                     <h3 className="text-lg md:text-3xl mb-3 leading-snug hover:underline" dangerouslySetInnerHTML={{ __html: node.titel.titelNl }}/>
                                     
-                                    <div className="text-lg mb-4 text-gray-600">
-                                        <FormattedDate dateString={node.date} />
-                                    </div>
                                     <div
-                                        className="text-lg leading-relaxed text-gray-700"
+                                        className="text-xl md:text-2xl text-gray-700"
                                         dangerouslySetInnerHTML={{ __html: node.preview_tekst.previewTekstNl }}
                                     />
+                                    <p className=" text-blue-700 mt-3">
+                                        <Link href={`/news/${node.slug}`}>
+                                            <a>
+                                                Lees meer...
+                                            </a>
+                                        </Link>
+                                    </p>
+                                    <div className="text-lg mt-4 text-gray-600">
+                                        <FormattedDate dateString={node.date} />
+                                    </div>
                                 </div>
                             </div>
                             
