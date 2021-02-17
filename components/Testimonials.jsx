@@ -13,7 +13,7 @@ export default function Testimonials() {
             <Container>
                 <Separator/>
                 <div className="text-center">
-                    <Image priority="true" src="/images/testimonials.svg" layout="fixed" width={200} height={200}/>
+                    <Image priority="true" quality={70} src="/images/testimonials.svg" layout="fixed" width={200} height={200}/>
                 </div>
                     <h2 className="mb-20 text-5xl font-bold tracking-tighter leading-tight text-center">Wat zegt de pers over Biz Oudwest? <Dot/></h2>
                 

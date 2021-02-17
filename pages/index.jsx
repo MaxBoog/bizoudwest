@@ -12,7 +12,6 @@ export default function Home({ morePosts: { edges }}) {
     return (
         <div>
             <Hero/>
-            
             <FeatureSection/>
             <Container>
                 {edges.length > 0 && <MorePosts posts={edges} />}

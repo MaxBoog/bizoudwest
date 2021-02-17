@@ -24,9 +24,9 @@ export default function MorePosts({ posts }) {
                     
                     <Link href={`/news/${node.slug}`} key={node.id}>
                         
-                            <div className="shadow-lg hover:shadow-2xl transition ease-in-out duration-200 overflow-hidden">
+                            <div className="shadow-lg hover:shadow-2xl transition ease-in-out duration-200 overflow-hidden cursor-pointer">
                                 <div className="my-5">
-                                    <Image layout="responsive" objectFit="cover" width={16} height={9} loading="lazy" className="h-auto w-full" src={node.preview_image.previewImage.mediaItemUrl} alt={node.titel.titelNl}/>
+                                    <Image quality={20} loading="lazy" layout="responsive" objectFit="cover" width={16} height={9} className="h-auto w-full" src={node.preview_image.previewImage.mediaItemUrl} alt={node.titel.titelNl}/>
                                 </div>
                                 <div className="px-10 py-5">
                                     <h3 className="text-lg md:text-3xl mb-3 leading-snug hover:underline" dangerouslySetInnerHTML={{ __html: node.titel.titelNl }}/>

@@ -6,6 +6,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styled from '@emotion/styled'
 import ArrowDown from 'components/ArrowDown'
+import BuurtMap from 'components/BuurtMap'
 
 
 export default function FeatureSection() {
@@ -18,7 +19,7 @@ export default function FeatureSection() {
                             <ArrowDown/>
                             <h2 className="my-10 lg:mt-24 text-2xl color-primary font-semibold tracking-wide uppercase">Bedrijven Investeringszone <span className="color-secondary">OUD WEST</span></h2>
                             <p className="mt-2 text-3xl lg:text-5xl leading-8 font-extrabold tracking-tight text-gray-900 ">
-                                Van horeca en pitoreske winkeltjes tot de basic-fit en de bever
+                                Van horeca en pitoreske winkeltjes tot de Basic-Fit en de Bever
                             </p>
                             <p className="mt-10 max-w-2xl text-xl text-gray-500 lg:mx-auto">
                                 Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.
@@ -96,21 +97,12 @@ export default function FeatureSection() {
                 </div>
                 <div>
                     <Separator/>
-                    <p className="my-5 text-3xl lg:text-5xl leading-8 font-extrabold tracking-tight text-gray-900 ml-4">
-                        Waar precies? <Link href="/boutiques">
-                            <a className="text-lg text-indigo-800 tracking-normal">
-                                Bekijk op maps <FontAwesomeIcon icon={faExternalLinkAlt}/>
-                            </a>
-                        </Link>
-                    </p>
                     <Link href="/boutiques">
-                        <div className="shadow-lg hover:shadow-2xl transition ease-in-out duration-200">
-                            <a>
-                                <Image layout="responsive" width={3} height={2} objectFit="cover" src="/images/Bedrijfsgebied.png"/>
-                                
-                            </a>
-                        </div>
+                        <p className="my-5 text-3xl lg:text-5xl leading-8 font-extrabold tracking-tight text-gray-900 ml-4 cursor-pointer">
+                            Waar precies?
+                        </p>
                     </Link>
+                    <BuurtMap/>
                 </div>
             </Container>
         </FeatureSectionStyled>

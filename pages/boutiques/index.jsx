@@ -1,5 +1,4 @@
 import Container from 'components/Container'
-import BuurtMap from 'components/BuurtMap'
 import Dot from 'components/Dot'
 import Image from 'next/image'
 import styled from '@emotion/styled'
@@ -7,6 +6,7 @@ import Separator from 'components/Separator'
 import ScrollToTopButton from 'components/ScrollToTopButton'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import ArrowDown from 'components/ArrowDown'
+import CategoryCard from 'components/CategoryCard'
 
 import { getWinkelsWithCategory } from '../../lib/api'
 import Link from 'next/link'
@@ -32,19 +32,19 @@ export default function Boutiques({ winkels: { edges }}) {
         <BoutiquesStyled>
             <Container>
                     <div className="text-center pt-40 md:pt-64">
-                        <Image priority="true" src="/images/city-3.svg" layout="fixed" width={300} height={300}/>
+                        <Image priority="true" src="/images/city-3.svg" layout="fixed" width={100} height={100}/>
                         <h1 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight text-center">In de buurt <Dot/></h1>
                         {/* <ArrowDown/> */}
                     </div>
                     
-                    <Separator/>
+                    {/* <Separator/> */}
                     
-                <BuurtMap/>
+                {/* <BuurtMap/> */}
                 <Separator/>
                 <h2 className="ml-3">Categorieën</h2>
                 <div className="flex flex-wrap mt-5">
                     {categories.map(({tag, href}) =>(
-                       <AnchorLink href={href} offset="50"> <span key={tag} className="bg-gray-200 hover:bg-gray-300 text-base rounded-full px-2 py-2 m-3 font-bold leading-loose cursor-pointer tranisition-200">{tag}</span></AnchorLink>
+                       <AnchorLink href={href} offset="50"> <span key={tag} className="bg-gray-200 hover:bg-gray-300 text-lg rounded-full p-3 m-3 font-bold leading-loose cursor-pointer tranisition-200">{tag}</span></AnchorLink>
                     ) )}
                 </div>
 
@@ -56,18 +56,8 @@ export default function Boutiques({ winkels: { edges }}) {
                     {edges.map(function({node}) {
                         if(node.winkel_categorie.winkelCategorie === "Food & Drinks"){
                             return (
-                                    
-                                <Link href={`/boutiques/${node.slug}`}>
-                                    <div key={node.databaseId} className="card my-2 mx-5 cursor-pointer border border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
-
-                                            <div className="my-3 mx-5">
-                                                <h2 className="boutique-name text-lg">{node.winkelnaam.winkelnaam}
-                                                </h2>
-                                                <p className="text-sm text-teal-800 font-mono bg-teal-100 rounded-lg inline p-1 -ml-1 animate-pulse">{node.winkel_categorie.winkelCategorie}</p>
-                                                <p className="boutique-description font-light font-mono text-base text-gray-700 hover:text-gray-900 transition-all duration-200">{node.winkel_beschrijving.winkelBeschrijvingNl}</p>
-                                            </div>
-                                    </div>
-                                </Link>
+                                <CategoryCard slug={node.slug} key={node.databaseId} winkelnaam={node.winkelnaam.winkelnaam} winkel_categorie={node.winkel_categorie.winkelCategorie} winkel_beschrijving={node.winkel_beschrijving.winkelBeschrijvingNl} color={"border-green-300"}/>
+                                
                             )
                         }
                     })}
@@ -83,17 +73,7 @@ export default function Boutiques({ winkels: { edges }}) {
                         if(node.winkel_categorie.winkelCategorie === "Boutiques"){
                             return (
                                     
-                                <Link href={`/boutiques/${node.slug}`}>
-                                    <div key={node.databaseId} className="card my-2 mx-5 cursor-pointer border border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
-
-                                            <div className="my-3 mx-5">
-                                                <h2 className="boutique-name text-lg">{node.winkelnaam.winkelnaam}
-                                                </h2>
-                                                <p className="text-sm text-teal-800 font-mono bg-red-100 rounded-lg inline p-1 -ml-1">{node.winkel_categorie.winkelCategorie}</p>
-                                                <p className="boutique-description font-light font-mono text-base text-gray-700 hover:text-gray-900 transition-all duration-200">{node.winkel_beschrijving.winkelBeschrijvingNl}</p>
-                                            </div>
-                                    </div>
-                                </Link>
+                                <CategoryCard slug={node.slug} key={node.databaseId} winkelnaam={node.winkelnaam.winkelnaam} winkel_categorie={node.winkel_categorie.winkelCategorie} winkel_beschrijving={node.winkel_beschrijving.winkelBeschrijvingNl} color={"border-red-500"}/>
                             )
                         }
                     })}
@@ -107,22 +87,11 @@ export default function Boutiques({ winkels: { edges }}) {
                     {edges.map(function({node}) {
                         if(node.winkel_categorie.winkelCategorie === "Sport"){
                             return (
-                                    
-                                <Link href={`/boutiques/${node.slug}`}>
-                                    <div key={node.databaseId} className="card my-2 mx-5 cursor-pointer border border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
-
-                                            <div className="my-3 mx-5">
-                                                <h2 className="boutique-name text-lg">{node.winkelnaam.winkelnaam}
-                                                </h2>
-                                                <p className="text-sm text-teal-800 font-mono bg-teal-100 rounded-lg inline p-1 -ml-1 animate-pulse">{node.winkel_categorie.winkelCategorie}</p>
-                                                <p className="boutique-description font-light font-mono text-base text-gray-700 hover:text-gray-900 transition-all duration-200">{node.winkel_beschrijving.winkelBeschrijvingNl}</p>
-                                            </div>
-                                    </div>
-                                </Link>
+                                <CategoryCard slug={node.slug} key={node.databaseId} winkelnaam={node.winkelnaam.winkelnaam} winkel_categorie={node.winkel_categorie.winkelCategorie} winkel_beschrijving={node.winkel_beschrijving.winkelBeschrijvingNl} color={"border-blue-600"}/>
                             )
                         }
                     })}
-                                           
+                    
                     
                 </div>
                 <h1 id="health" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5">Health</h1>
@@ -132,18 +101,7 @@ export default function Boutiques({ winkels: { edges }}) {
                     {edges.map(function({node}) {
                         if(node.winkel_categorie.winkelCategorie === "Health"){
                             return (
-                                    
-                                <Link href={`/boutiques/${node.slug}`}>
-                                    <div key={node.databaseId} className="card my-2 mx-5 cursor-pointer border border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
-
-                                            <div className="my-3 mx-5">
-                                                <h2 className="boutique-name text-lg">{node.winkelnaam.winkelnaam}
-                                                </h2>
-                                                <p className="text-sm text-teal-800 font-mono bg-teal-100 rounded-lg inline p-1 -ml-1 animate-pulse">{node.winkel_categorie.winkelCategorie}</p>
-                                                <p className="boutique-description font-light font-mono text-base text-gray-700 hover:text-gray-900 transition-all duration-200">{node.winkel_beschrijving.winkelBeschrijvingNl}</p>
-                                            </div>
-                                    </div>
-                                </Link>
+                                <CategoryCard slug={node.slug} key={node.databaseId} winkelnaam={node.winkelnaam.winkelnaam} winkel_categorie={node.winkel_categorie.winkelCategorie} winkel_beschrijving={node.winkel_beschrijving.winkelBeschrijvingNl} color={"border-orange-300"}/>
                             )
                         }
                     })}
@@ -157,18 +115,7 @@ export default function Boutiques({ winkels: { edges }}) {
                     {edges.map(function({node}) {
                         if(node.winkel_categorie.winkelCategorie === "Clothing"){
                             return (
-                                    
-                                <Link href={`/boutiques/${node.slug}`}>
-                                    <div key={node.databaseId} className="card my-2 mx-5 cursor-pointer border border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
-
-                                            <div className="my-3 mx-5">
-                                                <h2 className="boutique-name text-lg">{node.winkelnaam.winkelnaam}
-                                                </h2>
-                                                <p className="text-sm text-teal-800 font-mono bg-teal-100 rounded-lg inline p-1 -ml-1 animate-pulse">{node.winkel_categorie.winkelCategorie}</p>
-                                                <p className="boutique-description font-light font-mono text-base text-gray-700 hover:text-gray-900 transition-all duration-200">{node.winkel_beschrijving.winkelBeschrijvingNl}</p>
-                                            </div>
-                                    </div>
-                                </Link>
+                                <CategoryCard slug={node.slug} key={node.databaseId} winkelnaam={node.winkelnaam.winkelnaam} winkel_categorie={node.winkel_categorie.winkelCategorie} winkel_beschrijving={node.winkel_beschrijving.winkelBeschrijvingNl} color={"border-purple-800"}/>                                    
                             )
                         }
                     })}
@@ -182,18 +129,7 @@ export default function Boutiques({ winkels: { edges }}) {
                     {edges.map(function({node}) {
                         if(node.winkel_categorie.winkelCategorie === "Beauty"){
                             return (
-                                    
-                                <Link href={`/boutiques/${node.slug}`}>
-                                    <div key={node.databaseId} className="card my-2 mx-5 cursor-pointer border border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
-
-                                            <div className="my-3 mx-5">
-                                                <h2 className="boutique-name text-lg">{node.winkelnaam.winkelnaam}
-                                                </h2>
-                                                <p className="text-sm text-teal-800 font-mono bg-teal-100 rounded-lg inline p-1 -ml-1 animate-pulse">{node.winkel_categorie.winkelCategorie}</p>
-                                                <p className="boutique-description font-light font-mono text-base text-gray-700 hover:text-gray-900 transition-all duration-200">{node.winkel_beschrijving.winkelBeschrijvingNl}</p>
-                                            </div>
-                                    </div>
-                                </Link>
+                                <CategoryCard slug={node.slug} key={node.databaseId} winkelnaam={node.winkelnaam.winkelnaam} winkel_categorie={node.winkel_categorie.winkelCategorie} winkel_beschrijving={node.winkel_beschrijving.winkelBeschrijvingNl} color={"border-green-800"}/>   
                             )
                         }
                     })}
@@ -207,18 +143,7 @@ export default function Boutiques({ winkels: { edges }}) {
                     {edges.map(function({node}) {
                         if(node.winkel_categorie.winkelCategorie === "Home & Lifestyle"){
                             return (
-                                    
-                                <Link href={`/boutiques/${node.slug}`}>
-                                    <div key={node.databaseId} className="card my-2 mx-5 cursor-pointer border border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
-
-                                            <div className="my-3 mx-5">
-                                                <h2 className="boutique-name text-lg">{node.winkelnaam.winkelnaam}
-                                                </h2>
-                                                <p className="text-sm text-teal-800 font-mono bg-teal-100 rounded-lg inline p-1 -ml-1 animate-pulse">{node.winkel_categorie.winkelCategorie}</p>
-                                                <p className="boutique-description font-light font-mono text-base text-gray-700 hover:text-gray-900 transition-all duration-200">{node.winkel_beschrijving.winkelBeschrijvingNl}</p>
-                                            </div>
-                                    </div>
-                                </Link>
+                                <CategoryCard slug={node.slug} key={node.databaseId} winkelnaam={node.winkelnaam.winkelnaam} winkel_categorie={node.winkel_categorie.winkelCategorie} winkel_beschrijving={node.winkel_beschrijving.winkelBeschrijvingNl} color={"border-pink-300"}/>
                             )
                         }
                     })}
@@ -232,18 +157,7 @@ export default function Boutiques({ winkels: { edges }}) {
                     {edges.map(function({node}) {
                         if(node.winkel_categorie.winkelCategorie === "Books & Culture"){
                             return (
-                                    
-                                <Link href={`/boutiques/${node.slug}`}>
-                                <div key={node.databaseId} className="card my-2 mx-5 cursor-pointer border border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
-
-                                        <div className="my-3 mx-5">
-                                            <h2 className="boutique-name text-lg">{node.winkelnaam.winkelnaam}
-                                            </h2>
-                                            <p className="text-sm text-teal-800 font-mono bg-teal-100 rounded-lg inline p-1 -ml-1 animate-pulse">{node.winkel_categorie.winkelCategorie}</p>
-                                            <p className="boutique-description font-light font-mono text-base text-gray-700 hover:text-gray-900 transition-all duration-200">{node.winkel_beschrijving.winkelBeschrijvingNl}</p>
-                                        </div>
-                                </div>
-                            </Link>
+                                <CategoryCard slug={node.slug} key={node.databaseId} winkelnaam={node.winkelnaam.winkelnaam} winkel_categorie={node.winkel_categorie.winkelCategorie} winkel_beschrijving={node.winkel_beschrijving.winkelBeschrijvingNl} color={"border-orange-500"}/>
                             )
                         }
                     })}
@@ -257,18 +171,7 @@ export default function Boutiques({ winkels: { edges }}) {
                     {edges.map(function({node}) {
                         if(node.winkel_categorie.winkelCategorie === "Hotels & Travel"){
                             return (
-                                    
-                                <Link href={`/boutiques/${node.slug}`}>
-                                    <div key={node.databaseId} className="card my-2 mx-5 cursor-pointer border border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
-
-                                            <div className="my-3 mx-5">
-                                                <h2 className="boutique-name text-lg">{node.winkelnaam.winkelnaam}
-                                                </h2>
-                                                <p className="text-sm text-teal-800 font-mono bg-teal-100 rounded-lg inline p-1 -ml-1 animate-pulse">{node.winkel_categorie.winkelCategorie}</p>
-                                                <p className="boutique-description font-light font-mono text-base text-gray-700 hover:text-gray-900 transition-all duration-200">{node.winkel_beschrijving.winkelBeschrijvingNl}</p>
-                                            </div>
-                                    </div>
-                                </Link>
+                                <CategoryCard slug={node.slug} key={node.databaseId} winkelnaam={node.winkelnaam.winkelnaam} winkel_categorie={node.winkel_categorie.winkelCategorie} winkel_beschrijving={node.winkel_beschrijving.winkelBeschrijvingNl} color={"border-yellow-500"}/>
                             )
                         }
                     })}
@@ -282,18 +185,7 @@ export default function Boutiques({ winkels: { edges }}) {
                     {edges.map(function({node}) {
                         if(node.winkel_categorie.winkelCategorie === "Bikes & Cars"){
                             return (
-                                    
-                                <Link href={`/boutiques/${node.slug}`}>
-                                    <div key={node.databaseId} className="card my-2 mx-5 cursor-pointer border border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
-
-                                            <div className="my-3 mx-5">
-                                                <h2 className="boutique-name text-lg">{node.winkelnaam.winkelnaam}
-                                                </h2>
-                                                <p className="text-sm text-teal-800 font-mono bg-teal-100 rounded-lg inline p-1 -ml-1 animate-pulse">{node.winkel_categorie.winkelCategorie}</p>
-                                                <p className="boutique-description font-light font-mono text-base text-gray-700 hover:text-gray-900 transition-all duration-200">{node.winkel_beschrijving.winkelBeschrijvingNl}</p>
-                                            </div>
-                                    </div>
-                                </Link>
+                                <CategoryCard slug={node.slug} key={node.databaseId} winkelnaam={node.winkelnaam.winkelnaam} winkel_categorie={node.winkel_categorie.winkelCategorie} winkel_beschrijving={node.winkel_beschrijving.winkelBeschrijvingNl} color={"border-gray-500"}/>
                             )
                         }
                     })}
