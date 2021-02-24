@@ -52,7 +52,7 @@ export default function Post({ winkelData }) {
                                 {/* <h4 className="text-gray-500 pt-20 uppercase">over {winkelData.winkelnaam.winkelnaam}</h4> */}
                                 <h4 className="text-gray-500 pt-20 px-3 uppercase max-w-6xl mx-auto">{winkelData.winkel_beschrijving.winkelBeschrijvingNl}</h4>
                                 <hr className=" max-w-xs mx-auto my-12"/>
-                                <Image layout="responsive" loading="eager" quality={70} width={3} height={2} objectFit="cover" src={winkelData.winkel_afbeelding.winkelAfbeelding.mediaItemUrl}/>
+                                <Image layout="responsive" loading="eager" quality={20} width={3} height={2} objectFit="cover" src={winkelData.winkel_afbeelding.winkelAfbeelding.mediaItemUrl}/>
                                 <hr className=" max-w-xs mx-auto my-12"/>
                                 <h3 className="pb-3">Contact<Dot/></h3>
                                 <div className="text-left inline-block">

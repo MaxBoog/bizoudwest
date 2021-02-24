@@ -11,16 +11,16 @@ export default function CustomCarousel() {
                         <Image layout="responsive" priority="true" quality={70} width={16} height={5} objectFit="cover" src="/images/carousel/bakker-bertram.JPG"/>
                     </div>
                     <div>
-                        <Image layout="responsive" width={16} quality={70} height={5} objectFit="cover" src="/images/carousel/ebeling-1.JPG"/>
+                        <Image layout="responsive" priority="true" width={16} quality={70} height={5} objectFit="cover" src="/images/carousel/ebeling-1.JPG"/>
                     </div>
                     <div>
-                        <Image layout="responsive" width={16} quality={70} height={5} objectFit="cover" src="/images/carousel/ebeling-2.JPG"/>
+                        <Image layout="responsive" priority="true" width={16} quality={70} height={5} objectFit="cover" src="/images/carousel/ebeling-2.JPG"/>
                     </div>
                     <div>
-                        <Image layout="responsive" width={16} quality={70} height={5} objectFit="cover" src="/images/carousel/plantage-boekhandel.JPG"/>
+                        <Image layout="responsive" priority="true" width={16} quality={70} height={5} objectFit="cover" src="/images/carousel/plantage-boekhandel.JPG"/>
                     </div>
                     <div>
-                        <Image layout="responsive" width={16} quality={70} height={5} objectFit="cover" src="/images/carousel/basic-fit.JPG"/>
+                        <Image layout="responsive" priority="true" width={16} quality={70} height={5} objectFit="cover" src="/images/carousel/basic-fit.JPG"/>
                     </div>
                 </Carousel>
         </div>
