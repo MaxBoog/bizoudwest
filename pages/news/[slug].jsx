@@ -44,23 +44,24 @@ export default function Post({ postData }) {
                             color="#e7335d"
                             
                         />
-                        <article className="pt-40 md:pt-64" key={postData.databaseId}>
-                                <div className="sm:mx-0">
-                                    <Image quality={70} priority="true" layout="responsive" objectFit="cover" width={3} height={2} src={postData.preview_image.previewImage.mediaItemUrl} alt={postData.titel.titelNl}/>
-                                </div>
-                                <PostTitle>{postData.titel.titelNl}</PostTitle>
-                                <h3 className="text-center text-gray-600 text-base md:text-lg">
-                                    <FormattedDate dateString={postData.date}/> 
-                                </h3>
-                                <div className="text-center md:text-left">
+                        <article className="pt-40 md:pt-64 max-w-6xl mx-auto" key={postData.databaseId}>
+                                <div className="px-6 sm:px-0">
                                     <Link href="/news">
                                         <Button className="text-indigo-800 mt-4 font-bold"><FontAwesomeIcon icon={faChevronCircleLeft}/> Terug</Button>
                                     </Link>
                                 </div>
+                                <PostTitle>{postData.titel.titelNl}</PostTitle>
+                                <h3 className="text-gray-600 text-base md:text-lg px-6 sm:px-0">
+                                    <FormattedDate dateString={postData.date}/> 
+                                </h3>
+                                <Separator/>
+                                <div className="w-full h-auto">
+                                    <Image quality={20} loading="eager" layout="responsive" objectFit="cover" width={3} height={2} src={postData.preview_image.previewImage.mediaItemUrl} alt={postData.titel.titelNl}/>
+                                </div>
                                 <Separator/>
                             <PostBody content={postData.contents.contentNl}></PostBody>
                             <Separator/>
-                            <div className="text-center md:text-left">
+                            <div className="px-6 sm:px-0">
                                     <Link href="/news">
                                         <Button className="text-indigo-800 mt-4 font-bold"><FontAwesomeIcon icon={faChevronCircleLeft}/> Terug</Button>
                                     </Link>

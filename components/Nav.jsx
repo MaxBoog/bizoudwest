@@ -8,7 +8,7 @@ import Dot from 'components/Dot'
 const links = [
     { href: '/', label: 'Home', label_en:'Home' },
     { href: '/boutiques', label: 'Winkels', label_en: 'Boutiques' },
-    { href: '/news/', label: 'Nieuws', label_en: 'News'},
+    { href: '/news', label: 'Nieuws', label_en: 'News'},
     { href: '/contact', label: 'Contact', label_en:'Contact'}
 ].map((link) => {
     link.key = `nav-link-${link.href}-${link.label}`;
@@ -68,7 +68,7 @@ const links = [
                     {links.map(({ key, href, label, label_en}) => (
                         <li className="nav-item font-secondary" key={key} onClick={() => setNavbarOpen(!navbarOpen)}>
                             <Link href={href}>
-                                <a className={router.pathname === href ? 'px-3 py-2 flex items-center text-xs font-bold leading-snug active' : 'px-3 py-2 flex items-center text-xs font-bold leading-snug opacity-75'}>{label}<Dot/></a>
+                                <a className={router.pathname == href ? 'px-3 py-2 flex items-center text-xs font-bold leading-snug active' : 'px-3 py-2 flex items-center text-xs font-bold leading-snug opacity-75'}>{label}<Dot/></a>
                             </Link>
                         </li>
                     ))}
@@ -101,6 +101,7 @@ const NavigationStyled = styled.div`
                 }
                 .active {
                     opacity: 100%;
+                    border-bottom: 2px solid ${props => props.theme.colors.primary} !important;
                 }
             }
         }

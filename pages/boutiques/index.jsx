@@ -5,11 +5,11 @@ import styled from '@emotion/styled'
 import Separator from 'components/Separator'
 import ScrollToTopButton from 'components/ScrollToTopButton'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import ArrowDown from 'components/ArrowDown'
 import CategoryCard from 'components/CategoryCard'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUtensils, faStore, faDumbbell, faBookMedical, faSocks, faHandSparkles, faHome, faBookOpen, faSuitcaseRolling, faCar, faBicycle} from '@fortawesome/free-solid-svg-icons'
 
 import { getWinkelsWithCategory } from '../../lib/api'
-import Link from 'next/link'
 
 export default function Boutiques({ winkels: { edges }}) {
 
@@ -26,14 +26,17 @@ export default function Boutiques({ winkels: { edges }}) {
         {tag: "#Bikes & Cars", href:"#bikes&cars"}
 
     ]
+
+    const color = "#e7335d"
    
     
     return (
         <BoutiquesStyled>
             <Container>
                     <div className="text-center pt-40 md:pt-64">
-                        <Image priority="true" src="/images/city-3.svg" layout="fixed" width={100} height={100}/>
+                        <Image priority="true" src="/images/city-3.svg" layout="fixed" width={100} height={100} quality={70}/>
                         <h1 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight text-center">In de buurt <Dot/></h1>
+                        <h4 className="text-gray-500 pt-20 px-3 uppercase max-w-6xl mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores fugiat tempora nam fugit quasi accusamus ullam doloremque repudiandae quod. Corporis.</h4>
                         {/* <ArrowDown/> */}
                     </div>
                     
@@ -44,12 +47,12 @@ export default function Boutiques({ winkels: { edges }}) {
                 <h2 className="ml-3">Categorieën</h2>
                 <div className="flex flex-wrap mt-5">
                     {categories.map(({tag, href}) =>(
-                       <AnchorLink href={href} offset="50"> <span key={tag} className="bg-gray-200 hover:bg-gray-300 text-lg rounded-full p-3 m-3 font-bold leading-loose cursor-pointer tranisition-200">{tag}</span></AnchorLink>
+                       <AnchorLink href={href} offset="50"> <span key={tag} className="bg-gray-200 hover:bg-gray-300 text-lg rounded-full p-2 m-5 font-bold leading-loose cursor-pointer tranisition-200">{tag}</span></AnchorLink>
                     ) )}
                 </div>
 
                 
-                <h1 id="food&drinks" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5">Food &amp; Drinks</h1>
+                <h1 id="food&drinks" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5"><FontAwesomeIcon icon={faUtensils} color={color}/> - Food &amp; Drinks<Dot/>  </h1>
                     
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     
@@ -65,7 +68,7 @@ export default function Boutiques({ winkels: { edges }}) {
                     
                 </div>
 
-                <h1 id="boutiques" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5">Boutiques</h1>
+                <h1 id="boutiques" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5"><FontAwesomeIcon icon={faStore} color={color}/> - Boutiques<Dot/>  </h1>
                     
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     
@@ -80,7 +83,7 @@ export default function Boutiques({ winkels: { edges }}) {
                                            
                     
                 </div>
-                <h1 id="sport" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5">Sport</h1>
+                <h1 id="sport" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5"><FontAwesomeIcon icon={faDumbbell} color={color}/> - Sport<Dot/>  </h1>
                     
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     
@@ -94,7 +97,7 @@ export default function Boutiques({ winkels: { edges }}) {
                     
                     
                 </div>
-                <h1 id="health" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5">Health</h1>
+                <h1 id="health" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5"><FontAwesomeIcon icon={faBookMedical} color={color}/> - Health<Dot/>  </h1>
                     
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     
@@ -108,7 +111,7 @@ export default function Boutiques({ winkels: { edges }}) {
                                            
                     
                 </div>
-                <h1 id="clothing" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5">Clothing</h1>
+                <h1 id="clothing" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5"><FontAwesomeIcon icon={faSocks} color={color}/> - Clothing<Dot/>  </h1>
                     
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     
@@ -122,7 +125,7 @@ export default function Boutiques({ winkels: { edges }}) {
                                            
                     
                 </div>
-                <h1 id="beauty" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5">Beauty</h1>
+                <h1 id="beauty" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5"><FontAwesomeIcon icon={faHandSparkles} color={color}/> - Beauty<Dot/>  </h1>
                     
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     
@@ -136,7 +139,7 @@ export default function Boutiques({ winkels: { edges }}) {
                                            
                     
                 </div>
-                <h1 id="home&lifestyle" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5">Home &amp; Lifestyle</h1>
+                <h1 id="home&lifestyle" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5"><FontAwesomeIcon icon={faHome} color={color}/> - Home &amp; Lifestyle<Dot/> </h1>
                     
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     
@@ -150,7 +153,7 @@ export default function Boutiques({ winkels: { edges }}) {
                                            
                     
                 </div>
-                <h1 id="books&culture" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5">Books &amp; Culture</h1>
+                <h1 id="books&culture" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5"><FontAwesomeIcon icon={faBookOpen} color={color}/> - Books &amp; Culture<Dot/>  </h1>
                     
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     
@@ -164,7 +167,7 @@ export default function Boutiques({ winkels: { edges }}) {
                                            
                     
                 </div>
-                <h1 id="hotels&travel" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5">Hotels &amp; Travel</h1>
+                <h1 id="hotels&travel" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5"><FontAwesomeIcon icon={faSuitcaseRolling} color={color}/> - Hotels &amp; Travel<Dot/>  </h1>
                     
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     
@@ -178,7 +181,7 @@ export default function Boutiques({ winkels: { edges }}) {
                                            
                     
                 </div>
-                <h1 id="bikes&cars" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5">Bikes &amp; Cars</h1>
+                <h1 id="bikes&cars" className=" pt-32 text-center lg:text-left lg:ml-5 mb-5"><FontAwesomeIcon icon={faBicycle} color={color}/> &amp; <FontAwesomeIcon icon={faCar} color={color}/> - Bikes &amp; Cars<Dot/>   </h1>
                     
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     

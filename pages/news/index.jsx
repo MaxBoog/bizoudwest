@@ -1,7 +1,4 @@
 import styled from '@emotion/styled'
-import Card from 'components/Card'
-import Button from 'components/Button'
-import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import Container from 'components/Container'
@@ -25,13 +22,13 @@ const News = ({ allPosts: { edges } }) => {
                     <div className="flex flex-wrap -mx-1 lg:-mx-4">
                         {edges.map(({ node }) => (
                             // Column
-                            <Link href={`/news/${node.slug}`}>
-                            <div className="lg:flex xs:w-full  my-5 lg:my-10 px-4 lg:px-10 lg:w-1/2 cursor-pointer"  key={node.databaseId}>
+                            <Link href={`/news/${node.slug}`} key={node.databaseId}>
+                            <div className="lg:flex xs:w-full  my-5 lg:my-10 px-4 lg:px-10 lg:w-1/2 cursor-pointer">
                                 {/* Article */}
                                 <article className="flex-grow-0 lg:flex-grow overflow-hidden shadow-lg hover:shadow-2xl transition ease-in-out duration-200">
                                     {/* Image */}
                                         <a>
-                                            <Image layout="responsive" objectFit="cover" width={3} height={2} loading="lazy" className="h-auto w-full" src={node.preview_image.previewImage.mediaItemUrl} alt={node.titel.titelNl}/>
+                                            <Image layout="responsive" objectFit="cover" width={3} height={2} loading="lazy" quality={20} className="h-auto w-full" src={node.preview_image.previewImage.mediaItemUrl} alt={node.titel.titelNl}/>
                                         </a>
                                     
 
