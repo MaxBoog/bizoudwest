@@ -17,7 +17,7 @@ const News = ({ allPosts: { edges } }) => {
                     <div className="text-center pt-40 md:pt-64">
                         <Image priority="true" src="/images/news.svg" layout="fixed" width={200} height={200}/>
                     </div>
-                    <h1 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight text-center">Nieuwsoverzicht</h1>
+                    <h1 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight text-center">Nieuwsoverzicht<Dot/></h1>
                     <Separator/>
                     <div className="flex flex-wrap -mx-1 lg:-mx-4">
                         {edges.map(({ node }) => (

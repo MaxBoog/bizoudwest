@@ -56,7 +56,7 @@ export default function Navigation() {
         bmMenu: {
           background: '#373a47',
           padding: '2.5em 1.5em 0',
-          fontSize: '1.15em'
+          fontSize: '2.5rem'
         },
         bmMorphShape: {
           fill: '#373a47'
@@ -77,7 +77,7 @@ export default function Navigation() {
         <Menu styles={styles}>
             {links.map(({ key, href, label, label_en}) => (
                 <Link href={href} className="menu-item" key={key}>
-                    <a className={router.pathname == href ? 'menu-item px-3 py-2 flex items-center text-xs font-bold leading-snug active' : 'menu-item px-3 py-2 flex items-center text-xs font-bold leading-snug opacity-75'}>{label}<Dot/></a>
+                    <a className={router.pathname == href ? 'menu-item px-3 py-2 flex items-center font-bold leading-snug active' : 'menu-item px-3 py-2 flex items-center font-bold leading-snug opacity-75'}>{label}<Dot/></a>
                 </Link>
             ))}
         </Menu>
